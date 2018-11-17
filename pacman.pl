@@ -3,6 +3,8 @@
 %  - Celine AUSSOURD
 %  - Adrien JOLY
 
+:- style_check(-singleton).       % (new) added to prevent warning on modern interpreters
+
 % ____________________
 % Predicats dynamiques
 
