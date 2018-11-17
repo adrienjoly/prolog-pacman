@@ -399,12 +399,17 @@ changerDirPacman(Dir) :-
 % _____________________________
 % GESTION DES COMMANDES CLAVIER
 
-commandeClavier(K) :- K == 113, changerDirPacman(3), /*write('gauche'),*/ !.
-commandeClavier(K) :- K == 100, changerDirPacman(1), /*write('droite'),*/ !.
-commandeClavier(K) :- K == 122, changerDirPacman(0), /*write('haut'),*/ !.
-commandeClavier(K) :- K == 115, changerDirPacman(2), /*write('bas'),*/ !.
-commandeClavier(K) :- K ==  97, retractall(fin(_X)), assert(fin(0)), !.    % touche a
-commandeClavier(_K).
+% (FR keyboard layout) commandeClavier(K) :- K == 113, changerDirPacman(3), /*write('gauche'),*/ !.
+% (FR keyboard layout) commandeClavier(K) :- K == 100, changerDirPacman(1), /*write('droite'),*/ !.
+% (FR keyboard layout) commandeClavier(K) :- K == 122, changerDirPacman(0), /*write('haut'),*/ !.
+% (FR keyboard layout) commandeClavier(K) :- K == 115, changerDirPacman(2), /*write('bas'),*/ !.
+% (FR keyboard layout) commandeClavier(K) :- K ==  97, retractall(fin(_X)), assert(fin(0)), !.    % touche a
+
+commandeClavier(K) :- K ==  97, changerDirPacman(3), /*write('left'),*/ !.
+commandeClavier(K) :- K == 100, changerDirPacman(1), /*write('right'),*/ !.
+commandeClavier(K) :- K == 119, changerDirPacman(0), /*write('up'),*/ !.
+commandeClavier(K) :- K == 115, changerDirPacman(2), /*write('down'),*/ !.
+commandeClavier(K) :- K == 113, retractall(fin(_X)), assert(fin(0)), !. % Q to Quit
 
 % __________________
 % GESTION DU CLAVIER
